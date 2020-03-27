@@ -1,0 +1,32 @@
+body {
+	margin: 0px;
+	overflow: auto;
+	height: 100%;
+	-webkit-overflow-scrolling: touch;
+}
+
+html {
+	overflow: hidden;
+	height: 100%;
+}
+
+a:hover {
+	color: #FFBC1E;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	transition: 0.2s;
+}
+
+p a {
+	border-bottom: 2px solid #FFBC1E;
+}
+
+#Polygon-1:hover {
+	fill: #ff4f23;
+	 /* fill: #F65547;  */
+	 /* fill: #CEE5F2;  */
+	cursor: pointer;
+}

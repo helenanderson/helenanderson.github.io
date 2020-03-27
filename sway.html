@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Sway | Helen Anderson</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/project.css" />
+    <link rel="stylesheet" href="css/portfolio.css" />
+    <link rel="icon" href="favicon.ico">
+	<link href="https://fonts.googleapis.com/css?family=Cabin|Merriweather:400,400italic,500,500italic" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="header">
+        <svg viewBox="0 0 3000 94" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+            <desc>Created with Sketch.</desc>
+            <defs></defs>
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Header">
+                    <polygon id="Rectangle-3" fill="#FFFFFF" points="0 0 3000 0 3000 89 70.0800757 89 110.939028 44.5 0 41.9592405"></polygon>
+                    <g id="Group" transform="translate(1501.000000, 64.500000) rotate(90.000000) translate(-1501.000000, -64.500000) translate(1471.500000, -1435.500000)">
+                        <a aria-label="Return to homepage" xlink:href="index.html">
+                            <polygon id="Polygon-1" fill="#FFBC1E" points="53.0290698 2943.19203 3.99806202 2894.13295 3.99806202 2810.77023 53.0290698 2863.86983"></polygon>
+                        </a>
+                        <polygon id="HELEN" fill="#265D7C" points="0.230628469 2797.40723 49.2536503 2848.342 49.2536503 2800.08801 58.3088581 2800.08801 58.1939837 2870.22903 9.28583632 2819.48422 9.28583632 2867.05488 0.230628469 2867.05488"></polygon>
+                        <polygon id="ANDERSON" fill="#265D7C" points="0.281843821 2880.17888 49.1943586 2931.23874 49.1943586 2882.98099 58.2502725 2882.98099 58.2502725 2953.05461 9.22342842 2902.37872 9.22342842 2949.95308 0.167514535 2949.95308"></polygon>
+                        <path d="M5.03666667,2815.41038 L5.03666667,2998.51757" id="Line" stroke="#265D7C" stroke-width="9.68770764" stroke-linecap="square"></path>
+                        <path d="M53.4825,0.499305388 L53.4825,2930.415" id="Line-2" stroke="#265D7C" stroke-width="9.68770764" stroke-linecap="square"></path>
+                    </g>
+                </g>
+            </g>
+        </svg>
+    </div>
+    <div class="project">
+        <h1 id="sway">Sway</h1>
+        <h2>Suggested content filtering.</h2>
+        <div class="project-info">
+            <p class="primary-info">2017 | development</p>
+            <p class="primary-info"><i aria-label="Toolkit" class="fas fa-toolbox"></i>TypeScript</p>
+            <p class="primary-info">A Collaboration with the Sway authoring team.</p>
+        </div>
+        <p><a href="https://sway.office.com">Sway</a>, part of the Microsoft Office suite, is a web application for creating engaging, interactive, web-based presentations that look good on any device. I've worked on several features in my two years as a software engineer on the product, most of them central to the user experience of creating Sways. This feature, which I helped identify the need for, prototype, and ship, solved a common usability issue in the app.</p>
+        <p><em>Note: All thoughts are my own, and do not represent an official statement by Microsoft.</em></p>
+        <h3>The problem</h3>
+        <p>One of the things that users love most about Sway is the ability to search for images and videos without leaving the app. While creating a Sway, you can click the “insert” button and a pane pops out, filled with images and videos from the web. It used to look like this:</p>
+         <div class="standard-image">
+            <img alt="The Sway interface without content filtering" src="resources/acp-before.png"/>
+        </div>
+        <p>After running a study on <a href="https://usertesting.com">usertesting.com</a> to identify usability pitfalls in the Sway creation experience, we found that users had a difficult time telling the difference between an image and a video in the content pane, and knowing where they could drag and drop each onto the authoring surface.</p>
+        <div class="pullquote-wrapper">
+        <aside class="pullquote">The user would keep trying to drag a video into the title card and wonder why it wouldn't stay there.</aside>
+        </div>
+        <p>Often, the first piece of content users try to add to their Sway is a background image on their title card. The title card only allows an image to be dropped into it, not a video. But the video thumbnails in the content pane look similar to the images. When a user tried to add a video (that they thought was an image) to their title card, the content wouldn't stick in the title background spot, and would instead jump below the title, creating a new video card. At this point it was still unclear that the content was a video, and the user would keep trying to drag it into the title card and wonder why it wouldn't stay there. The experience was incredibly frustrating.</p>
+        <p>Telemetry told us that in about 20% of Sways, a video was the first piece of content a user added. We hypothesized a large portion of these videos were added by mistake, and that once we made the experience more clear, this percentage would decrease.</p>
+        <h3>The solution</h3>
+        <p>There were many possible ways to solve this problem, but the solution we decided on was one we believed could help us make big usability gains in a short amount of time.</p>
+        <div class="pullquote-wrapper">
+        <aside class="pullquote">The filters show the type of media that the user is most likely to want to add next.</aside>
+        </div>
+        <p>We added simple filters to the content pane to differentiate between different types of media. Crucially, the filters are context-aware, so they show the type of media that the user is most likely to want to add next based on the current state of the app.</p>
+        <p>For example, if the user clicks on the image placeholder inside of their title card (thereby opening the content pane), the pane opens to show only images, like this:</p>
+         <div class="standard-image">
+            <img alt="The Sway interface with content filters 'All', 'Images', and 'Videos', with 'Images' selected" src="resources/acp-after-image.png"/>
+        </div>
+        <p>If the user then moves their focus to a video card, the filters change to show only videos.</p>
+        <div class="standard-image">
+            <img alt="The Sway interface with content filters 'All', 'Images', and 'Videos', with 'Videos' selected" src="resources/acp-after-video.png"/>
+        </div>
+        <p>If the user wants to browse different types of media, they can escape the filtered view at any time by clicking the "All" filter.</p>
+        <p>When implementing the feature, I wanted to make sure that filter switching took place seamlessly, so all filtering is done client-side. A single request is made to the server upon the initial search (just as it was in the old version), so all search results are already loaded on the client; switching filters only determines which pieces of media are shown and which are hidden. This means that switching the filter doesn't incur any latency.</p>
+        <h3>Results</h3>
+        <p>After releasing the filtering feature, we found that the percentage of Sways where a video was the first piece of content added dropped to 10%. We confirmed through qualitative testing that the experience was much less confusing for users. We even saw a small increase in the percent of users who did a significant number of actions while in the Sway creation experience, indicating that the filtering feature helped to alleviate some frustration and keep users engaged in the process for a longer amount of time.</p>
+        <footer class="footer">
+            <div class="previous">
+                <label for="nav-previous"><p>previous</p></label>
+                <p><a name="nav-previous" href="drivemind.html">Drivemind</a></p>
+            </div>
+            <div class="next">
+                <label for="nav-next"><p>next</p></label>
+                <p><a name="nav-next" href="sun.html">The Sun Always</a></p>
+            </div>
+        </footer>
+    </div>
+  </body>
+</html>
